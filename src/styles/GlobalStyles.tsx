@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   html {
@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     --content-height: 84vh;
     --top: 5vh;
     --gap: 1vw;
+    --radius: 2px;
   }
 
   *, *:before, *:after {
@@ -37,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     max-width: 100vw;
     overscroll-behavior: none;
-    background-color: rgb(255, 255, 255);
+    background-color: #f4f9f9;
     overflow-x: hidden;
     width: 100%; 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

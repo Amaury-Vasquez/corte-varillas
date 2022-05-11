@@ -1,52 +1,17 @@
-# React boilerplate
+# Problema de corte de varillas
 
-<p align="center"> 
-  <img src="https://i.imgur.com/vPQVBd8.jpg" width="320" alt="React Logo" />
-</p>
+<p align="center"><a href="https://react-tsx-setup.netlify.app/" target="_blank"> Pagina web </a> </p>
+Proyecto creado para la materia de análisis y diseño de algoritmos,
+Escuela Superior de Computación, Instituto Politécnico Nacional.
 
-<p align="center"><a href="https://react-tsx-setup.netlify.app/" target="_blank"> Initial page </a> </p>
+## Descripción
 
-Initial setup for React with Typescript projects.
+Muestra las distintas soluciones utilizadas para resolver el clásico
+problema de la optimización de las varillas de corte, junto con animaciones correspondientes a cada algoritmo.
 
-Ready to deploy.
+## Dependencias Usadas
 
-## Installation
-
-Clone the repository, then run:
-
-```bash
-npm install
-```
-
-## Usage
-
-### Development mode
-
-```bash
-npm start
-```
-
-### Generate build
-
-```bash
-npm run build
-```
-
-### Serve build
-
-```bash
-npx webpack serve
-```
-
-or
-
-```bash
-serve -s dist
-```
-
-## Dependencies
-
-### Development
+### Desarrollo
 
 <ul> 
   <li> @babel/core </li>
@@ -71,12 +36,13 @@ serve -s dist
   <li> webpack-dev-server </li>
 </ul>
 
-### Production
+### Producción
 
 <ul>
   <li> react </li>
   <li> react-dom </li>
   <li> react-is </li>
+  <li> react-helmet-async </li>
   <li> workbox-expiration </li>
   <li> workbox-precaching </li>
   <li> workbox-routing </li>
