@@ -1,5 +1,6 @@
 import {
   Array,
+  ArrayName,
   Color,
   Description,
   DescriptionBar,
@@ -12,14 +13,16 @@ export const Animation = () => {
   const { n, length, prices } = useRodCut();
   return (
     <Div>
-      {/* <Array>
+      <Array len={length.length}>
+        <ArrayName> length [] = </ArrayName>
         {length.map((item, i) => (
-          <Items recursion={false} key={'length' + item + i}>
+          <Items color="" fill={n === i} key={'length' + item + i}>
             {item}
           </Items>
         ))}
-      </Array> */}
-      <Array>
+      </Array>
+      <Array len={prices.length}>
+        <ArrayName> price [] = </ArrayName>
         {prices.map((item, i) => (
           <Items
             color={n === i ? 'gray' : 'green'}
