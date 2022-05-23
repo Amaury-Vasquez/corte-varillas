@@ -60,6 +60,7 @@ export const useRodCut = () => {
       setTimeout(() => {
         setJ(0);
         setI(1);
+        setMax(-1);
       }, 3000);
     }
   }, [j, setAux, setJ, setI, setMax]);
