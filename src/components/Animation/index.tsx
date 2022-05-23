@@ -5,29 +5,48 @@ import {
   Description,
   DescriptionBar,
   Div,
+  InputContainer,
+  Input,
   Items,
 } from './styles';
+import { Slider } from '../Slider';
 import { useRodCut } from '../../hooks/useRodCut';
 
 export const Animation = () => {
-  const { n, length, prices } = useRodCut();
+  const {
+    aux,
+    colorPrices,
+    colorValues,
+    handleChange,
+    i,
+    len,
+    max,
+    prices,
+    values,
+  } = useRodCut();
   return (
     <Div>
-      <Array len={length.length}>
-        <ArrayName> length [] = </ArrayName>
-        {length.map((item, i) => (
-          <Items color="" fill={n === i} key={'length' + item + i}>
+      <Slider callback={handleChange} value={len} />
+
+      <Array len={prices.length}>
+        <ArrayName> {'precios ='} </ArrayName>
+        {prices.slice(0, len).map((item, index) => (
+          <Items
+            color={colorPrices(index)}
+            fill={true}
+            key={'price' + item + index}
+          >
             {item}
           </Items>
         ))}
       </Array>
-      <Array len={prices.length}>
-        <ArrayName> price [] = </ArrayName>
-        {prices.map((item, i) => (
+      <Array len={prices.length + 1}>
+        <ArrayName> {'valores ='}</ArrayName>
+        {values.slice(0, i).map((item, index) => (
           <Items
-            color={n === i ? 'gray' : 'green'}
-            fill={n === i}
-            key={'price' + item + i}
+            color={colorValues(index)}
+            fill={true}
+            key={'value' + item + index}
           >
             {item}
           </Items>
@@ -35,14 +54,14 @@ export const Animation = () => {
       </Array>
       <DescriptionBar>
         <Description>
-          <Color color="gray" />
-          recursion
+          <Color color="green" /> posicion i
         </Description>
         <Description>
-          <Color color="green" />
-          Ciclo
+          <Color color="gray" />
+          posicion j
         </Description>
-        <Description>{`costo = 0`}</Description>
+        <Description>{`aux = ${aux === undefined ? '?' : aux}`}</Description>
+        <Description>{`max_val = ${max}`}</Description>
       </DescriptionBar>
     </Div>
   );

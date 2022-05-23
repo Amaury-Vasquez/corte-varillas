@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 60vw;
+  width: 80vw;
   height: auto;
   margin: 0 auto;
   & > * {
@@ -25,9 +25,18 @@ export const HomePage = styled.div`
   }
 `;
 
+export const Example = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+`;
 export const Subtitle = styled.h2`
   margin-top: 40px;
   font-size: 1.2rem;
+  text-transform: capitalize;
 `;
 
 export const Text = styled.p`
@@ -36,6 +45,7 @@ export const Text = styled.p`
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
+  /* width: 800px; */
 `;
 
 export const Title = styled.h1`
