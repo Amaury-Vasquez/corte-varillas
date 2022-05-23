@@ -58,7 +58,6 @@ export const Animation = () => {
           <Color color="gray" />
           posicion j
         </Description>
-        <Description>{`aux = ${aux === undefined ? '?' : aux}`}</Description>
         <Description>{`max_val = ${max}`}</Description>
       </DescriptionBar>
     </Div>

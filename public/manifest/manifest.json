@@ -1,7 +1,7 @@
 {
-  "short_name": "React boilerplate",
-  "name": "React boilerplate created by Amaury Vasquez",
-  "description": "Boilerplate created to generate React and typescript projects",
+  "short_name": "Corte varillas",
+  "name": "Algoritmo de corte de varillas",
+  "description": "Página para animar la solución al problema de corte de varillas",
   "icons": [
     {
       "src": "template.ico",
@@ -32,6 +32,6 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "theme_color": "#c64756",
-  "background_color": "#c64756"
+  "theme_color": "#1597bb",
+  "background_color": "#1597bb"
 }
