@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 80vw;
+  width: min(1300px, 90vw);
   height: auto;
   margin: 0 auto;
   & > * {
@@ -49,7 +49,7 @@ export const Text = styled.p`
 `;
 
 export const Title = styled.h1`
-  margin-top: 100px;
+  margin-top: 20px;
   font-style: italic;
   font-size: 1.5rem;
   text-align: center;

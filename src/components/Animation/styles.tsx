@@ -71,27 +71,6 @@ export const Div = styled.div`
   }
 `;
 
-export const InputContainer = styled.div`
-  height: auto;
-  width: 100%;
-  border: 1px solid red;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  & > span {
-    font-weight: 500;
-    font-size: 1rem;
-    color: var(--gray-text);
-    margin-right: 10px;
-    text-transform: capitalize;
-  }
-`;
-
-export const Input = styled.input`
-  width: 100px;
-  border: 1px solid red;
-`;
-
 export const Items = styled.span<{ color: string; fill: boolean }>`
   ${fadeIn({ time: '1.5s' })}
   font-weight: 500;

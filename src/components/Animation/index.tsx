@@ -5,8 +5,6 @@ import {
   Description,
   DescriptionBar,
   Div,
-  InputContainer,
-  Input,
   Items,
 } from './styles';
 import { Slider } from '../Slider';
@@ -29,7 +27,7 @@ export const Animation = () => {
       <Slider callback={handleChange} value={len} />
 
       <Array len={prices.length}>
-        <ArrayName> {'precios ='} </ArrayName>
+        <ArrayName> {'precios'} </ArrayName>
         {prices.slice(0, len).map((item, index) => (
           <Items
             color={colorPrices(index)}
@@ -41,7 +39,7 @@ export const Animation = () => {
         ))}
       </Array>
       <Array len={prices.length + 1}>
-        <ArrayName> {'valores ='}</ArrayName>
+        <ArrayName> {'valores'}</ArrayName>
         {values.slice(0, i).map((item, index) => (
           <Items
             color={colorValues(index)}
