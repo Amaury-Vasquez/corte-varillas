@@ -17,16 +17,18 @@ export const Array = styled.div<{ len: number }>`
     height: 100%;
     width: 100%;
     font-size: 1rem;
-    border: 1px solid var(--blue);
+    /* border: 1px solid var(--blue); */
+    border: 1px rgba(0, 0, 0, 0.2) solid;
     border-right: none;
     overflow: hidden;
     border-radius: 2px;
+    text-transform: capitalize;
   }
   & > :first-child {
     border: none;
   }
   & > :last-child {
-    border-right: 1px solid var(--blue);
+    border-right: 1px rgba(0, 0, 0, 0.2) solid;
   }
   /* border-radius: var(--radius); */
 `;

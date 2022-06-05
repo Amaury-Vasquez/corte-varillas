@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 16px;
-    --gray: #d4e3e6;
+    --gray: #e6f1f3;
     --gray-text:#536162;
     --white: #f4f9f9;
     --green: #c7ffd8;
@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     --top: 5vh;
     --gap: 1vw;
     --radius: 2px;
+    --padding: 15px;
   }
 
   *, *:before, *:after {
