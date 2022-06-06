@@ -48,5 +48,9 @@ export const Submit = styled.input`
   font-weight: 600;
   &:hover {
     opacity: 0.6;
+    outline: none;
+  }
+  &:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.2);
   }
 `;
