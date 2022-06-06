@@ -2,13 +2,22 @@ import React, { useEffect, useState } from 'react';
 
 export const useRodCut = () => {
   // Funciones
+  const buttonClicked = () => setHide(!hide);
+
+  const callback = (arr: []) => {
+    setPrices(() => arr);
+    setHide(!hide);
+  };
+
   const colorPrices = (index: number) => {
     return j - 1 === index ? 'gray' : 'white';
   };
+
   const colorValues = (index: number) => {
     if (i - j - 1 === index) return i - 1 === index ? 'green' : 'gray';
     return i - 1 === index ? 'green' : 'white';
   };
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(event.target.value);
     setLen(val);
@@ -16,11 +25,14 @@ export const useRodCut = () => {
 
   // Estado
   const [aux, setAux] = useState<number>();
+  const [hide, setHide] = useState(true);
   const [i, setI] = useState<number>(1);
   const [j, setJ] = useState<number>(0);
   const [len, setLen] = useState<number>(8);
   const [max, setMax] = useState<number>(-1);
-  const prices = [1, 5, 8, 9, 10, 17, 17, 20, 22, 25];
+  const [prices, setPrices] = useState<Array<number>>([
+    1, 5, 8, 9, 10, 17, 17, 20, 22, 25,
+  ]);
   const [values, setValues] = useState<Array<number>>([0]);
 
   // Efectos
@@ -67,14 +79,18 @@ export const useRodCut = () => {
 
   return {
     aux,
+    buttonClicked,
+    callback,
     colorPrices,
     colorValues,
     handleChange,
+    hide,
     i,
     j,
     len,
     max,
     prices,
+    setPrices,
     values,
   };
 };

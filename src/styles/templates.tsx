@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
+import { fadeIn } from './animation';
+
 export const Container = styled.div`
+  ${fadeIn()};
   width: min(1000px, 80vw);
   height: auto;
   margin: 0 auto;

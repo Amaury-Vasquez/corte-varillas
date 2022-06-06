@@ -1,8 +1,9 @@
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Home } from '../pages/Home';
+import { Dp } from '../pages/Dp';
 import { Layout } from './Layout';
+import { Home } from '../pages/Home';
 import { GlobalStyles } from '../styles/GlobalStyles';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/dynamic-programming" element={<Dp />} />
           </Routes>
         </Layout>
       </BrowserRouter>

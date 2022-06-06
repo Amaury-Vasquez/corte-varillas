@@ -38,6 +38,27 @@ export const ArrayName = styled.span`
   font-weight: 600;
 `;
 
+export const Button = styled.button`
+  ${fadeIn()};
+  background: var(--green);
+  color: var(--gray-text);
+  outline: none;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 150px;
+  font-weight: 600;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
 export const Color = styled.span<{ color: string }>`
   height: 30px;
   width: 30px;

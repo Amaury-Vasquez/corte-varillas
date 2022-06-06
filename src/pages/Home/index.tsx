@@ -2,10 +2,10 @@ import { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { Code } from '../../components/Code';
-import { Array, ArrayName, Items } from '../../components/Animation/styles';
+import { Array } from '../../components/Array';
 import { Container } from '../../styles/templates';
 import { Animation } from '../../components/Animation';
-import { Example, Subtitle, Text, Title } from './styles';
+import { Div, Img, Subtitle, Text, Title } from './styles';
 
 export const Home = () => {
   const len = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -14,16 +14,18 @@ export const Home = () => {
   return (
     <Fragment>
       <Helmet>
-        <title> Dp | Algoritmo-corte-varillas</title>
+        <title> Algoritmo de corte de varillas</title>
       </Helmet>
       <Container>
         <Title>Problema de corte de varillas</Title>
-        <Subtitle> descripcion </Subtitle>
+        <Subtitle> descripción </Subtitle>
         <Text>
           Dada una barra de n pulgadas de longitud y una matriz de precios que
           incluye los precios de todas las piezas de tamaño menor o igual que n,
           determine el valor máximo que se puede obtener cortando la varilla y
-          vendiendo las piezas.
+          vendiendo las piezas. <br /> <br />
+          Los valores de precios se pueden repetir siempre y cuando no se rebase
+          la longitud máxima.
         </Text>
         {/* <Subtitle> funcionamiento</Subtitle>
         <Text>
@@ -31,22 +33,16 @@ export const Home = () => {
           valores posibles para cada valor de longitud de la varilla. Al final,
           la ultima posicion en el arreglo es la solucion al problema.
         </Text> */}
-        <Array len={len.length}>
-          <ArrayName> longitud </ArrayName>
-          {len.map((item, index) => (
-            <Items color={'gray'} fill={true} key={'price' + item + index}>
-              {item}
-            </Items>
-          ))}
-        </Array>
-        <Array len={prices.length}>
-          <ArrayName> precios </ArrayName>
-          {prices.map((item, index) => (
-            <Items color={'gray'} fill={true} key={'price' + item + index}>
-              {item}
-            </Items>
-          ))}
-        </Array>
+        <Div>
+          <Array color="gray" items={len} name="longitud" />
+          <Array color="gray" items={prices} name="precios" />
+        </Div>
+        <Text>
+          Para este ejemplo, el máximo valor obtenible sería igual a 22, el cuál
+          se obtiene de cortar la varilla en 2 pedazos de longitud 2 y 6,
+          correspondientemente.
+        </Text>
+        <Img src="https://i.imgur.com/HYSWhSn.png" alt="corte" />
         {/* <Example>
             <Code />
             <Animation />
