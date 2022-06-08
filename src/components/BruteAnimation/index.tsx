@@ -8,7 +8,7 @@ import { Button } from '../../styles/templates';
 import { useBruteForce } from '../../hooks/useBruteForce';
 
 export const BruteAnimation = () => {
-  const { arr, len, handleChange, handleReset, stop } = useBruteForce(2);
+  const { arr, len, handleChange, handleReset } = useBruteForce(2);
 
   return (
     <Div>
