@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
 
+import { Div, Img } from './styles';
 import { Code } from '../../components/Code';
 import { Array } from '../../components/Array';
 import { Container } from '../../styles/templates';
 import { Animation } from '../../components/Animation';
-import { Div, Img, Subtitle, Text, Title } from './styles';
+import { Subtitle, Text, Title } from '../../styles/templates';
 
 export const Home = () => {
   const len = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -27,15 +28,14 @@ export const Home = () => {
           Los valores de precios se pueden repetir siempre y cuando no se rebase
           la longitud máxima.
         </Text>
-        {/* <Subtitle> funcionamiento</Subtitle>
-        <Text>
-          El algoritmo busca establecer dentro de un nuevo arreglo, los maximos
-          valores posibles para cada valor de longitud de la varilla. Al final,
-          la ultima posicion en el arreglo es la solucion al problema.
-        </Text> */}
         <Div>
-          <Array color="gray" items={len} name="longitud" />
-          <Array color="gray" items={prices} name="precios" />
+          <Array color="gray" items={len} len={len.length} name="longitud" />
+          <Array
+            color="gray"
+            items={prices}
+            len={prices.length}
+            name="precios"
+          />
         </Div>
         <Text>
           Para este ejemplo, el máximo valor obtenible sería igual a 22, el cuál
@@ -43,10 +43,6 @@ export const Home = () => {
           correspondientemente.
         </Text>
         <Img src="https://i.imgur.com/HYSWhSn.png" alt="corte" />
-        {/* <Example>
-            <Code />
-            <Animation />
-          </Example> */}
       </Container>
     </Fragment>
   );

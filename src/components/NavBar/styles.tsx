@@ -11,7 +11,6 @@ export const Nav = styled.nav`
   background: var(--gray);
   border: 1px rgba(0, 0, 0, 0.2) solid;
   border-radius: 3px;
-  margin-bottom: 20px;
 
   & > a {
     font-weight: 400;

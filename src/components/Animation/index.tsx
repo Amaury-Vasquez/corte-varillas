@@ -1,65 +1,47 @@
 import { Slider } from '../Slider';
+import { Button } from '../../styles/templates';
+import { Array } from '../Array';
 import { PricesForm } from '../PricesForm';
 import { useRodCut } from '../../hooks/useRodCut';
-import {
-  Array,
-  ArrayName,
-  Button,
-  Color,
-  Description,
-  DescriptionBar,
-  Div,
-  Items,
-} from './styles';
+import { Color, Description, DescriptionBar, Div, PriceModify } from './styles';
 
 export const Animation = () => {
   const {
+    aux,
     buttonClicked,
+    buttonText,
     callback,
     colorPrices,
     colorValues,
     handleChange,
     hide,
-    i,
     len,
     max,
     prices,
-    setPrices,
     values,
   } = useRodCut();
 
   return (
     <Div>
-      <Slider callback={handleChange} value={len} />
-      <Array len={prices.length}>
-        <ArrayName> {'precios'} </ArrayName>
-        {prices.slice(0, len).map((item, index) => (
-          <Items
-            color={colorPrices(index)}
-            fill={true}
-            key={'price' + item + index}
-          >
-            {item}
-          </Items>
-        ))}
-      </Array>
-      {hide ? (
-        <Button onClick={() => buttonClicked()}> Cambiar precios </Button>
-      ) : (
-        <PricesForm callback={(arr: []) => callback(arr)} len={len} />
+      <Button onClick={buttonClicked}> {buttonText} </Button>
+      {!hide && (
+        <PriceModify>
+          <Slider callback={handleChange} min={1} max={10} value={len} />
+          <PricesForm callback={callback} len={len} />
+        </PriceModify>
       )}
-      <Array len={prices.length + 1}>
-        <ArrayName> {'valores'}</ArrayName>
-        {values.slice(0, i).map((item, index) => (
-          <Items
-            color={colorValues(index)}
-            fill={true}
-            key={'value' + item + index}
-          >
-            {item}
-          </Items>
-        ))}
-      </Array>
+      <Array
+        callback={colorPrices}
+        items={prices}
+        len={prices.length}
+        name="precios"
+      />
+      <Array
+        callback={colorValues}
+        items={values}
+        len={values.length}
+        name="valores"
+      />
       <DescriptionBar>
         <Description>
           <Color color="green" /> posicion i
@@ -69,6 +51,7 @@ export const Animation = () => {
           posicion j
         </Description>
         <Description>{`max_val = ${max}`}</Description>
+        <Description>{`aux = ${aux ? aux : '?'}`}</Description>
       </DescriptionBar>
     </Div>
   );

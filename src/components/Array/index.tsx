@@ -1,16 +1,22 @@
 import { Arr, Name, Item } from './styles';
 
 export const Array = (props: {
-  color: string;
+  callback?: Function;
+  color?: string;
   items: Array<number>;
+  len: number;
   name: string;
 }) => {
-  const { color, items, name } = props;
+  const { callback, color, items, name } = props;
   return (
-    <Arr len={items.length}>
-      <Name> {name} </Name>
+    <Arr len={name !== '' ? items.length : items.length - 1} name={name !== ''}>
+      {name !== '' && <Name> {name} </Name>}
       {items.map((item, index) => (
-        <Item color={color} fill={true} key={name + item + index}>
+        <Item
+          color={callback ? callback(index) : color ? color : 'gray'}
+          fill={true}
+          key={items.length + name + color + item + index}
+        >
           {item}
         </Item>
       ))}

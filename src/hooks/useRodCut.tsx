@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { useRangeChange } from './useRangeChange';
+
 export const useRodCut = () => {
   // Funciones
   const buttonClicked = () => setHide(!hide);
@@ -18,21 +20,15 @@ export const useRodCut = () => {
     return i - 1 === index ? 'green' : 'white';
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const val = parseInt(event.target.value);
-    setLen(val);
-  };
-
   // Estado
   const [aux, setAux] = useState<number>();
+  const [buttonText, setButtonText] = useState<string>('Cambiar precios');
   const [hide, setHide] = useState(true);
   const [i, setI] = useState<number>(1);
   const [j, setJ] = useState<number>(0);
-  const [len, setLen] = useState<number>(8);
+  const { len, handleChange } = useRangeChange(5);
   const [max, setMax] = useState<number>(-1);
-  const [prices, setPrices] = useState<Array<number>>([
-    1, 5, 8, 9, 10, 17, 17, 20, 22, 25,
-  ]);
+  const [prices, setPrices] = useState<Array<number>>([1, 5, 8, 9, 10]);
   const [values, setValues] = useState<Array<number>>([0]);
 
   // Efectos
@@ -49,9 +45,8 @@ export const useRodCut = () => {
       }
       return arr;
     };
-
     setValues(rodCut());
-  }, [len, prices, setValues]);
+  }, [prices, setValues]);
 
   useEffect(() => {
     if (j < i || i < len) {
@@ -81,6 +76,7 @@ export const useRodCut = () => {
   return {
     aux,
     buttonClicked,
+    buttonText,
     callback,
     colorPrices,
     colorValues,

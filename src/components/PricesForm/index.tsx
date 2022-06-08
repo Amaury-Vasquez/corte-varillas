@@ -21,11 +21,8 @@ export const PricesForm = (props: { callback: Function; len: number }) => {
     <Div>
       <Form len={len + 1} onSubmit={handleSubmit(onSubmit)}>
         {inputs.map((item) => (
-          <Fragment>
-            <Input
-              key={'input' + item}
-              {...register(`input${item}`, { required: true })}
-            />
+          <Fragment key={'input' + item}>
+            <Input {...register(`input${item}`, { required: true })} />
             {errors.test}
           </Fragment>
         ))}
