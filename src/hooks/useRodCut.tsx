@@ -49,8 +49,9 @@ export const useRodCut = () => {
       }
       return arr;
     };
+
     setValues(rodCut());
-  }, [len, setValues]);
+  }, [len, prices, setValues]);
 
   useEffect(() => {
     if (j < i || i < len) {
