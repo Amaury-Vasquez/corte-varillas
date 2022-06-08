@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const ButtonDiv = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-`;
-
 export const Div = styled.div`
   height: auto;
   width: auto;

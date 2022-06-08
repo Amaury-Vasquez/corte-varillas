@@ -13,13 +13,14 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  width: 150px;
+  height: 45px;
+  width: 200px;
   font-weight: 600;
   margin: 0 auto;
   border-radius: 5px;
+  font-size: 0.9rem;
   cursor: pointer;
-
+  font-style: italic;
   &:hover {
     opacity: 0.6;
   }

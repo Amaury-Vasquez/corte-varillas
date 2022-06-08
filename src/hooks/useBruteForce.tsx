@@ -18,21 +18,25 @@ export const useBruteForce = (n: number) => {
     return a;
   };
 
+  const getText = () => {
+    if (stop) return 'Iniciar animación';
+    else if (arr.length === len) return 'Reiniciar animacion';
+    else return 'Parar animacion';
+  };
   const handleReset = () => {
-    setStop(true);
+    setStop(!stop);
     setArr(() => []);
-    setStop(false);
   };
 
   const { len, handleChange } = useRangeChange(n);
   const [arr, setArr] = useState<number[]>([]);
   const [stop, setStop] = useState<boolean>(false);
-  const recursiveCalls: number[] = getCalls(15);
+  const [total, setTotal] = useState<number>(0);
+  const recursiveCalls: number[] = getCalls(20);
 
   useEffect(() => {
     setStop(true);
     setArr(() => []);
-    setStop(false);
   }, [len, setArr]);
 
   useEffect(() => {
@@ -48,12 +52,19 @@ export const useBruteForce = (n: number) => {
             )
           );
         }, 2000);
-      }
+      } else if (stop) setArr(() => []);
     }
     return () => {
       render = false;
     };
   }, [arr, stop, setStop]);
 
-  return { arr, len, handleChange, handleReset, stop };
+  useEffect(() => {
+    setTotal(() => {
+      let sum = 0;
+      arr.forEach((item) => (sum += item));
+      return sum;
+    });
+  }, [arr]);
+  return { arr, len, handleChange, handleReset, getText, total };
 };
