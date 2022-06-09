@@ -15,7 +15,7 @@ export const Array = (props: {
         <Item
           color={callback ? callback(index) : color ? color : 'gray'}
           fill={true}
-          key={items.length + name + color + item + index}
+          key={`${items.length} + ${name} + ${color} + ${item} + ${index}`}
         >
           {item}
         </Item>
