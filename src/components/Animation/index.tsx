@@ -16,6 +16,7 @@ export const Animation = () => {
     colorValues,
     handleChange,
     hide,
+    i,
     len,
     max,
     prices,
@@ -41,7 +42,7 @@ export const Animation = () => {
           />
           <Array
             callback={colorValues}
-            items={values}
+            items={values.slice(0, i)}
             len={values.length}
             name="valores"
           />

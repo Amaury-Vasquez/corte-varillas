@@ -11,6 +11,7 @@ export const useRodCut = () => {
 
   const callback = (arr: []) => {
     setPrices(() => arr);
+    setButtonText('Cambiar precios');
     setHide(!hide);
   };
 
