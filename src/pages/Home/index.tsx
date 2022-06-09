@@ -6,7 +6,7 @@ import { Code } from '../../components/Code';
 import { Array } from '../../components/Array';
 import { Container } from '../../styles/templates';
 import { Animation } from '../../components/Animation';
-import { Subtitle, Text, Title } from '../../styles/templates';
+import { Line, Subtitle, Text, Title } from '../../styles/templates';
 
 export const Home = () => {
   const len = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -19,6 +19,7 @@ export const Home = () => {
       </Helmet>
       <Container>
         <Title>Problema de corte de varillas</Title>
+        <Line />
         <Subtitle> descripción </Subtitle>
         <Text>
           Dada una barra de n pulgadas de longitud y una matriz de precios que
@@ -26,21 +27,22 @@ export const Home = () => {
           determine el valor máximo que se puede obtener cortando la varilla y
           vendiendo las piezas. <br /> <br />
           Los valores de precios se pueden repetir siempre y cuando no se rebase
-          la longitud máxima.
+          la longitud máxima. <br />
         </Text>
         <Div>
-          <Array color="gray" items={len} len={len.length} name="longitud" />
+          <Array color="white" items={len} len={len.length} name="longitud" />
           <Array
-            color="gray"
+            color="white"
             items={prices}
             len={prices.length}
             name="precios"
           />
         </Div>
         <Text>
+          <br />
           Para este ejemplo, el máximo valor obtenible sería igual a 22, el cuál
           se obtiene de cortar la varilla en 2 pedazos de longitud 2 y 6,
-          correspondientemente.
+          correspondientemente. <br />
         </Text>
         <Img src="https://i.imgur.com/HYSWhSn.png" alt="corte" />
       </Container>

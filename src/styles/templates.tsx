@@ -28,9 +28,10 @@ export const Button = styled.button`
 
 export const Container = styled.div`
   ${fadeIn()};
-  width: min(1000px, 80vw);
+  width: 90vw;
   height: auto;
   margin: 0 auto;
+  margin-bottom: 20px;
   padding: 15px;
   & > * {
     margin: 0 auto;
@@ -43,21 +44,36 @@ export const Container = styled.div`
   p {
     color: var(--gray-text);
   }
+  @media screen and (min-width: 1500px) {
+    width: 70vw;
+  }
+  padding-bottom: 100px;
+`;
+
+export const Line = styled.hr`
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--gray);
+  margin-top: 15px;
+  margin-bottom: 5px;
 `;
 
 export const Page = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100vw;
 `;
 
 export const Subtitle = styled.h2`
-  margin-top: 40px;
+  padding: 5px;
+  margin-top: 20px;
   font-size: 1.2rem;
   text-transform: capitalize;
   margin-bottom: 10px;
 `;
 
 export const Text = styled.p`
+  padding: 0 20px;
   /* text-align: justify; */
   font-size: 1rem;
   font-weight: 400;
@@ -70,7 +86,7 @@ export const Text = styled.p`
 `;
 
 export const Title = styled.h1`
-  margin-top: 20px;
+  margin-top: 5px;
   font-style: italic;
   font-size: 1.5rem;
   text-align: center;

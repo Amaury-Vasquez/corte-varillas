@@ -8,6 +8,7 @@ export const Arr = styled.div<{ len: number; name?: boolean }>`
   display: grid;
   grid-template-columns: ${(props) => `repeat(${props.len}, 1fr)`};
   align-items: center;
+  grid-gap: 5px;
   & > span {
     color: var(--gray-text);
     display: flex;
