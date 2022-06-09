@@ -3,9 +3,8 @@ import { Helmet } from 'react-helmet-async';
 
 import { Example } from './styles';
 import { Code } from '../../components/Code';
-import { Container } from '../../styles/templates';
 import { Animation } from '../../components/Animation';
-import { Subtitle, Text, Title } from '../../styles/templates';
+import { Container, Line, Subtitle, Text, Title } from '../../styles/templates';
 export const Dp = () => {
   const code =
     'int corte_varilla(int precios[], int n) {\n  ' +
@@ -27,12 +26,14 @@ export const Dp = () => {
       </Helmet>
       <Container>
         <Title> Programación dinámica (dp) </Title>
+        <Line />
         <Subtitle> funcionamiento</Subtitle>
         <Text>
           El algoritmo busca establecer dentro de un nuevo arreglo, los maximos
           valores posibles para cada valor de longitud de la varilla. Al final,
           la ultima posicion en el arreglo es la solucion al problema.
         </Text>
+        <Line />
         <Subtitle> complejidad temporal </Subtitle>
         <Text>
           La función se compone de un ciclo for anidado dentro de otro, por lo
@@ -43,6 +44,7 @@ export const Dp = () => {
           eficiente para el problema dado.
           <br /> <br />
         </Text>
+        <Line />
         <Example>
           <Code code={code} />
           <Animation />

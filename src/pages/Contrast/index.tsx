@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 import { Caption, Div, Table, TableName, Th, Tr } from './styles';
 import { useTimesTable } from '../../hooks/useTimesTable';
-import { Container, Text, Title } from '../../styles/templates';
+import { Container, Line, Text, Title } from '../../styles/templates';
 
 export const Constrast = () => {
   const { bruta, dinamica } = useTimesTable();
@@ -15,6 +15,7 @@ export const Constrast = () => {
       </Helmet>
       <Container>
         <Title> Solución bruta vs solución dinámica </Title>
+        <Line />
         <Text>
           <br />
           Cuando se crean algoritmos para resolver un problema, se busca que
@@ -26,6 +27,7 @@ export const Constrast = () => {
           programador la importancia de implementar algoritmos eficientes para
           resolver un problema.
         </Text>
+        <Line />
         <TableName> Tabla comparativa de tiempos </TableName>
         <Div>
           <Table>

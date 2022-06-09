@@ -4,12 +4,12 @@ import { fadeIn } from './animation';
 
 export const Button = styled.button`
   ${fadeIn()};
-  background: var(--white);
-  color: var(--gray-text);
+  background: var(--blue);
+  color: var(--white);
   outline: none;
-  /* border: 1px rgba(0, 0, 0, 0.2) solid; */
+  /* border: 1px solid rgba(126, 126, 126, 0.2); */
   border-radius: 3px;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,10 +17,10 @@ export const Button = styled.button`
   width: 200px;
   font-weight: 600;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 0.9rem;
   cursor: pointer;
-  font-style: italic;
+  /* font-style: italic; */
   &:hover {
     opacity: 0.6;
   }
@@ -62,6 +62,14 @@ export const Page = styled.div`
   min-height: 100vh;
   height: auto;
   width: 100vw;
+`;
+
+export const SubLine = styled.hr`
+  display: flex;
+  width: 80%;
+  border: 1px solid var(--gray);
+  margin-top: 15px;
+  /* margin-bottom: 5px; */
 `;
 
 export const Subtitle = styled.h2`

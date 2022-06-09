@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 import { Code } from '../../components/Code';
 import { Container } from '../../styles/templates';
-import { Subtitle, Text, Title } from '../../styles/templates';
+import { Line, SubLine, Subtitle, Text, Title } from '../../styles/templates';
 import { BruteAnimation } from '../../components/BruteAnimation';
 
 export const Brute = () => {
@@ -25,6 +25,7 @@ export const Brute = () => {
       </Helmet>
       <Container>
         <Title> Programación por fuerza bruta </Title>
+        <Line />
         <Subtitle> funcionamiento </Subtitle>
         <Text>
           El algoritmo busca guardar en cada iteración el resultado de la suma
@@ -33,12 +34,14 @@ export const Brute = () => {
           Inmediatamente después compara el resultado obtenido con el valor
           anterior para obtener el máximo de las sumas.
         </Text>
+        <SubLine />
         <Subtitle> complejidad temporal </Subtitle>
         <Text>
           La complejidad temporal de este algoritmo recursivo es O(c<sup>n</sup>
           ), lo que lo convierte en un algoritmo exponencial y lo hace altamente
           ineficiente.
         </Text>
+        <SubLine />
         <Code code={code} />
         <BruteAnimation />
       </Container>
