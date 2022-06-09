@@ -4,6 +4,7 @@ import { Array } from '../Array';
 import { PricesForm } from '../PricesForm';
 import { useRodCut } from '../../hooks/useRodCut';
 import { Color, Description, DescriptionBar, Div, PriceModify } from './styles';
+import { Fragment } from 'react';
 
 export const Animation = () => {
   const {
@@ -30,29 +31,33 @@ export const Animation = () => {
           <PricesForm callback={callback} len={len} />
         </PriceModify>
       )}
-      <Array
-        callback={colorPrices}
-        items={prices}
-        len={prices.length}
-        name="precios"
-      />
-      <Array
-        callback={colorValues}
-        items={values}
-        len={values.length}
-        name="valores"
-      />
-      <DescriptionBar>
-        <Description>
-          <Color color="green" /> posicion i
-        </Description>
-        <Description>
-          <Color color="gray" />
-          posicion j
-        </Description>
-        <Description>{`max_val = ${max}`}</Description>
-        <Description>{`aux = ${aux ? aux : '?'}`}</Description>
-      </DescriptionBar>
+      {hide && (
+        <Fragment>
+          <Array
+            callback={colorPrices}
+            items={prices}
+            len={prices.length}
+            name="precios"
+          />
+          <Array
+            callback={colorValues}
+            items={values}
+            len={values.length}
+            name="valores"
+          />
+          <DescriptionBar>
+            <Description>
+              <Color color="green" /> posicion i
+            </Description>
+            <Description>
+              <Color color="gray" />
+              posicion j
+            </Description>
+            <Description>{`max_val = ${max}`}</Description>
+            <Description>{`aux = ${aux ? aux : '?'}`}</Description>
+          </DescriptionBar>
+        </Fragment>
+      )}
     </Div>
   );
 };

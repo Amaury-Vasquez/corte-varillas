@@ -4,7 +4,10 @@ import { useRangeChange } from './useRangeChange';
 
 export const useRodCut = () => {
   // Funciones
-  const buttonClicked = () => setHide(!hide);
+  const buttonClicked = () => {
+    setHide(!hide);
+    setButtonText(hide ? 'Cancelar' : 'Cambiar precios');
+  };
 
   const callback = (arr: []) => {
     setPrices(() => arr);
@@ -33,9 +36,9 @@ export const useRodCut = () => {
 
   // Efectos
   useEffect(() => {
-    const rodCut = () => {
+    setValues(() => {
       const arr: Array<number> = [0];
-      for (let i = 1; i <= len; i++) {
+      for (let i = 1; i <= prices.length; i++) {
         let max = -1;
         for (let j = 0; j < i; j++) {
           let aux = prices[j] + arr[i - j - 1];
@@ -44,34 +47,40 @@ export const useRodCut = () => {
         arr.push(max);
       }
       return arr;
-    };
-    setValues(rodCut());
+    });
   }, [prices, setValues]);
 
   useEffect(() => {
-    if (j < i || i < len) {
-      setTimeout(() => {
-        if (j < i) {
-          const tmp = prices[j] + values[i - j - 1];
-          setAux(tmp);
-          setMax(max > tmp ? max : tmp);
-          setJ(j + 1);
-        } else if (i < len) {
+    let render = true;
+    if (render) {
+      if (j < i || i < prices.length) {
+        setTimeout(() => {
+          if (j < i) {
+            const tmp = prices[j] + values[i - j - 1];
+            setAux(tmp);
+            setMax(max > tmp ? max : tmp);
+            setJ(j + 1);
+          } else if (i < prices.length) {
+            setJ(0);
+            setI(i + 1);
+            setAux(undefined);
+            setMax(-1);
+          }
+        }, 700);
+      } else {
+        setI(i + 1);
+        setTimeout(() => {
           setJ(0);
-          setI(i + 1);
-          setAux(undefined);
+          setI(1);
           setMax(-1);
-        }
-      }, 700);
-    } else {
-      setI(i + 1);
-      setTimeout(() => {
-        setJ(0);
-        setI(1);
-        setMax(-1);
-      }, 3000);
+        }, 3000);
+      }
     }
-  }, [j, setAux, setJ, setI, setMax]);
+
+    return () => {
+      render = false;
+    };
+  }, [j, prices, setAux, setJ, setI, setMax]);
 
   return {
     aux,

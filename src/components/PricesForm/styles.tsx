@@ -36,6 +36,7 @@ export const Form = styled.form<{ len: number }>`
 `;
 
 export const Input = styled.input`
+  ${fadeIn({ time: '0.4s' })};
   width: 60px;
   height: 40px;
   background: transparent;
