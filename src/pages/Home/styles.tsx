@@ -15,5 +15,5 @@ export const Img = styled.img`
   width: auto;
   display: flex;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 60px;
 `;

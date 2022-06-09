@@ -27,12 +27,13 @@ export const DescriptionBar = styled.div`
 `;
 
 export const Div = styled.div`
-  width: min(900px, 75vw);
+  width: 100%;
   height: auto;
   display: block;
   & > * {
     margin-top: 30px;
   }
+  margin-bottom: 20px;
 `;
 
 export const PriceModify = styled.div``;

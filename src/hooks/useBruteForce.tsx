@@ -23,6 +23,7 @@ export const useBruteForce = (n: number) => {
     else if (arr.length === len) return 'Reiniciar animacion';
     else return 'Parar animacion';
   };
+
   const handleReset = () => {
     setStop(!stop);
     setArr(() => []);
@@ -52,7 +53,7 @@ export const useBruteForce = (n: number) => {
             )
           );
         }, 2000);
-      } else if (stop) setArr(() => []);
+      }
     }
     return () => {
       render = false;
@@ -66,5 +67,6 @@ export const useBruteForce = (n: number) => {
       return sum;
     });
   }, [arr]);
+
   return { arr, len, handleChange, handleReset, getText, total };
 };

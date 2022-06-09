@@ -8,19 +8,17 @@ export const Arr = styled.div<{ len: number; name?: boolean }>`
   display: grid;
   grid-template-columns: ${(props) => `repeat(${props.len + 1}, 1fr)`};
   align-items: center;
+  grid-gap: 5px;
   & > span {
     color: var(--gray-text);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid var(--blue);
-    box-sizing: border-box;
     height: 100%;
     width: 100%;
     font-size: 1rem;
-    /* border: 1px solid var(--blue); */
     border: 1px rgba(0, 0, 0, 0.2) solid;
-    border-right: none;
+    border-radius: 5px;
     overflow: hidden;
     border-radius: 2px;
     text-transform: capitalize;

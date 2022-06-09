@@ -5,14 +5,14 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-size: 16px;
     --gray: #e6f1f3;
-    --gray-text:#536162;
-    --white: #f4f9f9;
+    --gray-text:#336162;
+    --white: #fff;
     --green: #c7ffd8;
     --shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     --light-shadow: 0px 8px 16px 0px rgba(256, 256, 256, 0.2);
     --red: #e84545;
     --loading-red: #c64756;
-    --blue: #1597bb;
+    --blue: #006699;
     --white-rgba: rgba(256, 256, 256, 0.9);
     --content-width: 70vw;
     --content-height: 84vh;
@@ -39,7 +39,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     max-width: 100vw;
     overscroll-behavior: none;
-    background-color: #f4f9f9;
+    background-color: var(--white);
     overflow-x: hidden;
     width: 100%; 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
