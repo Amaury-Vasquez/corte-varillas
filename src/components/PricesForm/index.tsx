@@ -13,7 +13,7 @@ export const PricesForm = (props: { callback: Function; len: number }) => {
 
   const onSubmit = (data: any) => {
     const values = Object.keys(data).map((key) => parseInt(data[key]));
-    callback(values);
+    callback(values.slice(0, len));
   };
   const inputs = Array.from(Array(len).keys());
 
