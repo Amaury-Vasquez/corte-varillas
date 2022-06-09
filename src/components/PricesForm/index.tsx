@@ -17,15 +17,7 @@ export const PricesForm = (props: { callback: Function; len: number }) => {
     callback(values.slice(0, len));
   };
   // const inputs = );
-  const [inputs, setInput] = useState<number[]>([]);
-
-  useEffect(() => {
-    setInput(() => Array.from(Array(len).keys()));
-  }, [len]);
-
-  useEffect(() => {
-    console.log(inputs);
-  }, [inputs]);
+  const inputs = Array.from(Array(len).keys());
 
   return (
     <Div>
