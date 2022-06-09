@@ -20,7 +20,9 @@ export const BruteAnimation = () => {
       <ArrayIndex len={arr.length} />
       {arr.length > 0 && <Span> {`Total de llamadas: ${total}`} </Span>}
       {arr.length > 0 && (
-        <Span> {`Total de operaciones básicas: ${total * arr.length}`} </Span>
+        <Span>
+          {`Aproximado de operaciones básicas: ${total * arr.length}`}{' '}
+        </Span>
       )}
     </Div>
   );
