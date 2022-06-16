@@ -52,7 +52,7 @@ export const useBruteForce = (n: number) => {
               recursiveCalls.length
             )
           );
-        }, 2000);
+        }, 1000);
       }
     }
     return () => {
