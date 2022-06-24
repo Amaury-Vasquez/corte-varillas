@@ -1,6 +1,6 @@
 # Problema de corte de varillas
 
-<p align="center"><a href="https://algortimo-corte-varillas.netlify.app/" target="_blank"> Pagina web </a> </p>
+<p align="center"><a href="https://algoritmo-corte-varillas.netlify.app/" target="_blank"> Pagina web </a> </p>
 Proyecto creado para la materia de análisis y diseño de algoritmos,
 Escuela Superior de Computación, Instituto Politécnico Nacional.
 
