@@ -9,43 +9,5 @@ Escuela Superior de Computación, Instituto Politécnico Nacional.
 Muestra las distintas soluciones utilizadas para resolver el clásico
 problema de la optimización de las varillas de corte, junto con animaciones correspondientes a cada algoritmo.
 
-## Dependencias Usadas
-
-### Desarrollo
-
-<ul> 
-  <li> @babel/core </li>
-  <li> @babel/preset-env </li>
-  <li> @babel/preset-react </li>
-  <li> @babel/preset-typescript </li>
-  <li> @types/react </li>
-  <li> @types/react-dom </li>
-  <li> @types/styled-components </li>
-  <li> babel-loader </li>
-  <li> clean-webpack-plugin </li>
-  <li> copy-webpack-plugin </li>
-  <li> html-loader </li>
-  <li> html-webpack-plugin </li>
-  <li> source-map-loader </li>
-  <li> styled-components </li>
-  <li> terser-webpack-plugin </li>
-  <li> ts-loader </li>
-  <li> typescript </li>
-  <li> webpack </li>
-  <li> webpack-cli </li>
-  <li> webpack-dev-server </li>
-</ul>
-
-### Producción
-
-<ul>
-  <li> react </li>
-  <li> react-dom </li>
-  <li> react-is </li>
-  <li> react-helmet-async </li>
-  <li> workbox-expiration </li>
-  <li> workbox-precaching </li>
-  <li> workbox-routing </li>
-  <li> workbox-strategies </li>
-  <li> workbox-webpack-plugin </li>
-</ul>
+La página se enfoca mayormente en mostrar las diferencias entre usar
+tecnicas de programación bruta y técnicas de programación dinámica.
